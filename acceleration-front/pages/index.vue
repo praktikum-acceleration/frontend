@@ -1,73 +1,63 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        acceleration-front
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="page">
+    <form class="form" @submit.prevent="login">
+
+      <Inp class="form__row" label="Имя" :value.sync="userName"/>
+      <Inp class="form__row" label="Пароль" type="password"/>
+      <Btn class="form__row _blue" type="submit">Войти</Btn>
+    </form>
   </div>
 </template>
 
 <script>
-export default {}
+import Inp from '~/components/ui/Inp'
+import Btn from '~/components/ui/Btn'
+import { mapMutations } from "vuex";
+
+export default {
+  components: {
+    Inp,
+    Btn
+  },
+  data() {
+    return {
+      userName: '',
+    }
+  },
+  methods: {
+    ...mapMutations(['setUser']),
+    login() {
+      this.setUser({name: this.userName})
+      this.$router.push('/lk')
+    }
+  }
+}
+
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style lang="scss">
+.page {
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  background-color: black;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.form {
+  padding: 24px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+
+  &__row {
+    height: 56px;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
