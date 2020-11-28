@@ -3,10 +3,12 @@
     <label class="input__label">
       <input class="input__input"
              :type="type"
+             :name="name"
              :max="max"
              :min="min"
              :placeholder="label"
              :required="required"
+             :value="defaultValue"
              v-model="value"
              @change="$emit('update:value', value)">
       <span class="input__label-text">{{ label }}</span>
@@ -35,8 +37,15 @@ export default {
     type: {
       type: String
     },
+    name: {
+      type: String
+    },
     label: {
       type: String
+    },
+    defaultValue: {
+      // type: String,
+      default:'',
     },
 
   }

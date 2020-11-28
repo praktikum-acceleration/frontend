@@ -1,11 +1,24 @@
 <template>
   <div class="page">
-    <form class="form" @submit.prevent="login">
-
-      <Inp class="form__row" label="Имя" :value.sync="userName"/>
+    <transition-group name="slide-fade">
+    <form v-if="loginForm" class="form" @submit.prevent="login" :key="1">
+      <Inp class="form__row" label="Почта" :value.sync="userName"/>
       <Inp class="form__row" label="Пароль" type="password"/>
+      <button type="button" class="form__disclaimer" @click="loginForm=false">Зарегстрироваться</button>
       <Btn class="form__row _blue" type="submit">Войти</Btn>
     </form>
+    <form v-else class="form" @submit.prevent="singUp" :key="2">
+      <Inp class="form__row" label="Почта" :value.sync="userName"/>
+      <Inp class="form__row" label="Имя" :value.sync="userName"/>
+      <Inp class="form__row" label="Фамилия" :value.sync="userName"/>
+      <Inp class="form__row" label="Когорта" :value.sync="userName"/>
+      <Inp class="form__row" label="Пароль" type="password"/>
+      <Inp class="form__row" label="Повторите пароль" type="password"/>
+      <button type="button" class="form__disclaimer" @click="loginForm=true">Уже зарегестрированы? Войти.</button>
+
+      <Btn class="form__row _blue" type="submit">Зарегестироваться</Btn>
+    </form>
+    </transition-group>
   </div>
 </template>
 
@@ -13,6 +26,8 @@
 import Inp from '~/components/ui/Inp'
 import Btn from '~/components/ui/Btn'
 import { mapMutations } from "vuex";
+
+import '@/assets/css/form.scss'
 
 export default {
   components: {
@@ -22,11 +37,16 @@ export default {
   data() {
     return {
       userName: '',
+      loginForm: true,
     }
   },
   methods: {
     ...mapMutations(['setUser']),
     login() {
+      this.setUser({name: this.userName})
+      this.$router.push('/lk')
+    },
+    singUp() {
       this.setUser({name: this.userName})
       this.$router.push('/lk')
     }
@@ -37,27 +57,29 @@ export default {
 
 <style lang="scss">
 .page {
-  display: flex;
+  //display: flex;
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
+  //justify-content: center;
+  //align-items: center;
   background-color: black;
 }
 
-.form {
-  padding: 24px;
-  width: 400px;
-  background-color: #fff;
-  border-radius: 12px;
-
-  &__row {
-    height: 56px;
-    width: 100%;
-
-    &:not(:last-child) {
-      margin-bottom: 24px;
-    }
-  }
+form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(-30%) translateY(-50%);
+  opacity: 0;
 }
 
 </style>

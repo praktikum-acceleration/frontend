@@ -1,0 +1,28 @@
+.form {
+  padding: 24px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+
+  &__row {
+    height: 56px;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__disclaimer {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 12px;
+    color: #5DA2D5;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

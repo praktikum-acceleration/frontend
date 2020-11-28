@@ -11,3 +11,9 @@ export const mutations = {
     state.menu = bool;
   },
 }
+
+export const actions = {
+  async fetchData({ commit }) {
+    return await getProducts()
+  },
+}

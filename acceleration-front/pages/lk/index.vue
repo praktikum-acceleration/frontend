@@ -1,18 +1,29 @@
 <template>
   <div>
-    <h1>Добро пожаловать {{ user.name }}</h1>
+    <Container>
+      <h1>Добро пожаловать {{ user ? user.name : ''}}</h1>
+    </Container>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-  export default {
-    middleware:['lk'],
-    layout: 'lk',
-    computed: mapState([
-      'user'
-    ])
-  };
+import { mapState } from 'vuex'
+import Container from '@/components/layout/Container'
+
+export default {
+  layout: 'lk',
+  middleware: 'offers',
+  computed: mapState([
+    'user'
+  ]),
+  components: {
+    Container
+  }
+  ,
+  mounted() {
+    console.log(this.$store.getters['offers/getOffers'])
+  }
+}
 </script>
-<style lang="scss" module>
+<style lang="scss">
 
 </style>
