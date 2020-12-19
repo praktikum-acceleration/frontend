@@ -1,25 +1,22 @@
 <template>
   <div class="lk-root">
-    <Container>
-      <h1>Добро пожаловать {{ user ? user.name : ''}}</h1>
+    <Container class="lk-header__container">
+Лента
     </Container>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
 import Container from '@/components/layout/Container'
-
 export default {
+  name: 'news',
   layout: 'lk',
-  middleware: 'offers',
-  computed: mapState([
-    'user'
-  ]),
   components: {
     Container
-  },
+  }
 }
 </script>
 <style lang="scss">
+.news {
 
+}
 </style>

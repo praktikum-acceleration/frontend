@@ -1,14 +1,16 @@
 <template>
-  <div>
+  <div @click="closeMenu">
   <header class="lk-header">
     <Container class="lk-header__container">
       <nuxt-link class="lk-header__logo" to="/lk/">Logo</nuxt-link>
       <nuxt-link class="lk-header__link" to="/lk/reply">Добавить отзыв</nuxt-link>
       <nuxt-link class="lk-header__link" to="/lk/stats">Статистика</nuxt-link>
+      <nuxt-link class="lk-header__link" to="/lk/news">Лента</nuxt-link>
+      <nuxt-link class="lk-header__link" to="/lk/my">Мои отзывы</nuxt-link>
       <div class="user-menu">
         <img class="user-menu__avatar"
              src="https://steamuserimages-a.akamaihd.net/ugc/938337452372130541/EAA1571C522D491CF3EA158BF127F9463B531D2F/?imw=512&amp;imh=384&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true"
-             alt=""
+             alt="Аватар"
              @click="openMenu">
         <ul class="user-menu__list"
             v-if="menuShown">
@@ -17,7 +19,9 @@
       </div>
     </Container>
   </header>
-    <Nuxt @click="closeMenu"/>
+    <transition name="slide-fade" appear>
+    <Nuxt />
+    </transition>
   </div>
 </template>
 
@@ -26,12 +30,13 @@ import Container from '@/components/layout/Container'
 
 export default {
   // middleware:['lk'],
+  middleware:['offers'],
   components: {
     Container
   },
   data() {
     return {
-      menuShown: false
+      menuShown: true
     }
   },
   methods: {
@@ -98,5 +103,27 @@ export default {
     padding: 8px;
     cursor: pointer;
   }
+}
+
+.lk-root {
+  opacity: 1;
+}
+
+.slide-fade-enter-active {
+  transition: all .4s ease;
+  //opacity: 0;
+}
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-leave-to {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transform: translateX(-30%);
+  opacity: 0;
+}
+
+.slide-fade-enter {
+  transform: translateX(30%);
+  opacity: 0;
 }
 </style>

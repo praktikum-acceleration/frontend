@@ -4,8 +4,8 @@
     "review_date": "2020-11-20",
     "job_status": "false",
     "reply": "30",
-    "replies_from_employer": "11",
-    "test_tasks": "11",
+    "replies_from_employer": "2",
+    "test_tasks": "0",
     "offers": "11",
     "comment": "11"
   },
@@ -14,8 +14,8 @@
     "review_date": "2020-10-20",
     "job_status": "false",
     "reply": "20",
-    "replies_from_employer": "11",
-    "test_tasks": "11",
+    "replies_from_employer": "5",
+    "test_tasks": "2",
     "offers": "11",
     "comment": "11"
   },
@@ -25,7 +25,7 @@
     "job_status": "false",
     "reply": "30",
     "replies_from_employer": "11",
-    "test_tasks": "11",
+    "test_tasks": "5",
     "offers": "11",
     "comment": "11"
   },
@@ -35,7 +35,7 @@
     "job_status": "false",
     "reply": "20",
     "replies_from_employer": "11",
-    "test_tasks": "11",
+    "test_tasks": "1",
     "offers": "11",
     "comment": "11"
   },
@@ -45,7 +45,7 @@
     "job_status": "false",
     "reply": "30",
     "replies_from_employer": "11",
-    "test_tasks": "11",
+    "test_tasks": "3",
     "offers": "11",
     "comment": "11"
   }

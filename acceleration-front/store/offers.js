@@ -24,6 +24,6 @@ export const actions = {
 
 export const getters = {
   getOffers(state) {
-    return state.blocks;
+    return state.offers;
   },
 };

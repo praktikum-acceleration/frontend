@@ -1,18 +1,20 @@
 <template>
   <div class="page">
     <transition-group name="slide-fade">
-    <form v-if="loginForm" class="form" @submit.prevent="login" :key="1">
-      <Inp class="form__row" label="Почта" :value.sync="userName"/>
-      <Inp class="form__row" label="Пароль" type="password"/>
+    <form v-if="loginForm" class="form" @submit="login" :key="1"
+          method="POST" action="http://0819a8e70ee9.ngrok.io/auth/login/">
+      <Inp class="form__row" label="Почта" name="email" :value.sync="userName"/>
+      <Inp class="form__row" label="Пароль" name="password" type="text"/>
       <button type="button" class="form__disclaimer" @click="loginForm=false">Зарегстрироваться</button>
       <Btn class="form__row _blue" type="submit">Войти</Btn>
     </form>
-    <form v-else class="form" @submit.prevent="singUp" :key="2">
-      <Inp class="form__row" label="Почта" :value.sync="userName"/>
-      <Inp class="form__row" label="Имя" :value.sync="userName"/>
-      <Inp class="form__row" label="Фамилия" :value.sync="userName"/>
-      <Inp class="form__row" label="Когорта" :value.sync="userName"/>
-      <Inp class="form__row" label="Пароль" type="password"/>
+    <form v-else class="form" @submit="singUp" :key="2"
+          method="POST" action="http://0819a8e70ee9.ngrok.io/auth/registration/">
+      <Inp class="form__row" label="Почта" name="email" :value.sync="userName"/>
+      <Inp class="form__row" label="Имя" name="username" :value.sync="userName"/>
+<!--      <Inp class="form__row" label="Фамилия" :value.sync="userName"/>-->
+<!--      <Inp class="form__row" label="Когорта" :value.sync="userName"/>-->
+      <Inp class="form__row" label="Пароль" name="password" type="password"/>
       <Inp class="form__row" label="Повторите пароль" type="password"/>
       <button type="button" class="form__disclaimer" @click="loginForm=true">Уже зарегестрированы? Войти.</button>
 
@@ -55,7 +57,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page {
   //display: flex;
   min-height: 100vh;
