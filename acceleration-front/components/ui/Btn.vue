@@ -2,7 +2,8 @@
   <button class="btn"
     :disabled="disabled"
     :class="blockClass"
-    :type="type">
+    :type="type"
+  @click="$emit('btn-click')">
     <slot></slot>
   </button>
 </template>
@@ -38,10 +39,13 @@ export default {
   border-radius: 4px;
 
   &._blue {
-    background-color: #5DA2D5;
+    background-color: $blue-light;
+    color: white;
+  }
+
+  &._red {
+    background-color: #ef4d4d;
     color: white;
   }
 }
-
-
 </style>

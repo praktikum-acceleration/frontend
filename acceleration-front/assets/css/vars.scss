@@ -1,0 +1,22 @@
+$black: #151414;
+$grey: #6e6b6b;
+$active-bg:#00A11E;
+$active-color:#fff;
+$blue-light: #5DA2D5;
+$default-color: #282136;
+$secondary-color:#3D374A;
+$dropdown-color:#3D374A;
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  color: $black;
+  margin: 0;
+  padding: 0;
+}

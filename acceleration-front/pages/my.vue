@@ -1,8 +1,8 @@
-<<template>
+<template>
   <div class="lk-root">
     <Container>
-      <h1>Новости</h1>
-      <ReplyList :offers="offers"/>
+      <h1>Мои отзывы</h1>
+      <ReplyList :offers="myOffers" />
     </Container>
   </div>
 </template>
@@ -17,10 +17,21 @@ export default {
     ReplyList
   },
 
+  data() {
+    return {
+    }
+  },
+
+  methods: {
+    editReplyHandler(reply) {
+      this.$store.dispatch('popup/openPopup', reply)
+    }
+  },
+
   computed: {
-    offers() {
-      const { offers } = this.$store.state.offers
-      return offers
+    myOffers() {
+      const { myOffers } = this.$store.state.offers
+      return myOffers
     }
   },
 }

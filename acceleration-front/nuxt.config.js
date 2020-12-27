@@ -11,9 +11,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    baseUrl: 'http://127.0.0.1:8000/',
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/css/main.css',
+  css: ['@/assets/css/main.scss',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -29,9 +32,15 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/pwa
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
+  styleResources: {
+    scss: [
+      '~/assets/css/vars.scss', // путь к вашему файлу
+    ],
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

@@ -1,26 +1,23 @@
 <template>
-  <div @click="closeMenu">
-  <header class="lk-header">
-    <Container class="lk-header__container">
-      <nuxt-link class="lk-header__logo" to="/lk/">Logo</nuxt-link>
-      <nuxt-link class="lk-header__link" to="/lk/reply">Добавить отзыв</nuxt-link>
-      <nuxt-link class="lk-header__link" to="/lk/stats">Статистика</nuxt-link>
-      <nuxt-link class="lk-header__link" to="/lk/news">Лента</nuxt-link>
-      <nuxt-link class="lk-header__link" to="/lk/my">Мои отзывы</nuxt-link>
-      <div class="user-menu">
-        <img class="user-menu__avatar"
-             src="https://steamuserimages-a.akamaihd.net/ugc/938337452372130541/EAA1571C522D491CF3EA158BF127F9463B531D2F/?imw=512&amp;imh=384&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true"
-             alt="Аватар"
-             @click="openMenu">
-        <ul class="user-menu__list"
-            v-if="menuShown">
-          <li class="user-menu__item">Выйти</li>
-        </ul>
-      </div>
-    </Container>
-  </header>
+  <div class="root">
+    <header class="lk-header">
+      <Container class="lk-header__container">
+        <nuxt-link class="lk-header__logo" to="/">Logo</nuxt-link>
+        <nuxt-link class="lk-header__link" to="/">Лента</nuxt-link>
+        <nuxt-link class="lk-header__link" to="/stats">Статистика</nuxt-link>
+        <template v-if="userLogin">
+          <nuxt-link class="lk-header__link" to="/reply">Добавить отзыв</nuxt-link>
+          <nuxt-link class="lk-header__link" to="/my">Мои отзывы</nuxt-link>
+          <nuxt-link class="lk-header__link" to="/profile">Профиль</nuxt-link>
+          <button class="lk-header__logout" @click="logout">Выйти</button>
+        </template>
+        <template v-else>
+          <nuxt-link class="lk-header__link" to="/login">Войти</nuxt-link>
+        </template>
+      </Container>
+    </header>
     <transition name="slide-fade" appear>
-    <Nuxt />
+      <Nuxt @updateUser="checkUser"/>
     </transition>
   </div>
 </template>
@@ -29,30 +26,58 @@
 import Container from '@/components/layout/Container'
 
 export default {
-  // middleware:['lk'],
-  middleware:['offers'],
   components: {
     Container
   },
+
   data() {
     return {
-      menuShown: true
+      loadedOffers: {},
+      userLogin: false,
     }
   },
-  methods: {
-    openMenu() {
-      this.menuShown = true
+
+  computed: {
+    isLoaded() {
+      const { isLoaded } = this.$store.state.offers
+      return isLoaded
     },
-    closeMenu() {
-      this.menuShown = false
-    }
-  }
+  },
+
+  methods: {
+    logout() {
+      window.localStorage.removeItem('token')
+      window.location.reload()
+    },
+
+    checkUser() {
+      this.userLogin = JSON.parse(window.localStorage.getItem('token'))
+    },
+  },
+
+  beforeMount() {
+    this.$store.dispatch('offers/fetchOffers', JSON.parse(window.localStorage.getItem('token')))
+    this.checkUser()
+    this.$root.$on('updateUser',this.checkUser)
+  },
+
 }
 
 </script>
 <style lang="scss">
+.root {
+  min-height: 100vh;
+}
+
+.lk-root {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .lk-header {
-  background-color: red;
+  //background-color: ;
+  border-bottom: 1px solid $blue-light;
+  color: #151414;
 
   &__container {
     height: 80px;
@@ -63,7 +88,7 @@ export default {
 
   &__logo {
     text-decoration: none;
-    color: white;
+    color: inherit;
     font-size: 24px;
     font-weight: 700;
     margin-right: auto;
@@ -71,9 +96,21 @@ export default {
 
   &__link {
     text-decoration: none;
-    color: white;
+    color: inherit;
     font-weight: 500;
     margin: 0 12px;
+  }
+
+  &__logout {
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: #ef4d4d;
+    color: white;
+    margin: 0 12px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
   }
 }
 
@@ -95,8 +132,6 @@ export default {
     background-color: #fff;
     box-shadow: 1px 1px 5px 1px #47494e;
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
   &__item {
@@ -107,15 +142,18 @@ export default {
 
 .lk-root {
   opacity: 1;
+  padding-top: 48px;
 }
 
 .slide-fade-enter-active {
   transition: all .4s ease;
   //opacity: 0;
 }
+
 .slide-fade-leave-active {
   transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
+
 .slide-fade-leave-to {
   transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   transform: translateX(-30%);

@@ -1,20 +1,19 @@
 <template>
-  <div class="input">
-    <label class="input__label">
-      <input :class="['input__input',{'_error': onError}]"
+  <div class="textarea">
+    <label class="textarea__label">
+      <textarea :class="['textarea__textarea',{'_error': onError}]"
              :type="type"
              :name="name"
              :max="max"
              :min="min"
              :placeholder="label"
              :required="required"
-             :valueAsDate="valueAsDate"
+             :value="defaultValue"
              v-model="value"
-             @change="changeInput"
-             @blur="validate">
-      <span class="input__label-text" v-html="label"></span>
+                @change="changeInput"></textarea>
+      <span class="textarea__label-text">{{ label }}</span>
     </label>
-    <span class="input__error-message">{{ errorMessage }}</span>
+    <span class="textarea__error-message">{{ errorMessage }}</span>
   </div>
 </template>
 <script>
@@ -22,8 +21,6 @@ export default {
   data() {
     return {
       value: '',
-      onError: '',
-      valueAsDate: '',
     }
   },
   props: {
@@ -47,43 +44,32 @@ export default {
     },
     defaultValue: {
       // type: String,
-      default: ''
+      default:'',
     },
 
-
+    onError: {
+      type: Boolean
+    },
     errorMessage: {
       type: String
     }
   },
 
+  created() {
+    this.value = this.defaultValue
+  },
+
   methods: {
     changeInput(e) {
       this.$emit('update:value', e.currentTarget.value)
-    },
-    validate(e) {
-      const input = e.currentTarget
-      this.onError = input.checkValidity()
-      // if(input.valid)
-
-    },
-    getToday() {
-      const today = new Date()
-      return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
     }
-  },
-
-  created() {
-    this.value = this.defaultValue
-    if(this.type === 'date' && !this.defaultValue) {
-      this.value = this.getToday()
-    }
-  },
+  }
 }
 </script>
 <style lang="scss">
-.input {
+.textarea {
   font-weight: 400;
-  height: 56px;
+  min-height: 112px;
   width: 100%;
   background-color: inherit;
 
@@ -95,13 +81,14 @@ export default {
     background-color: inherit;
   }
 
-  &__input {
+  &__textarea {
     padding: 12px;
-    height: 100%;
+    height: 112px;
     width: 100%;
     outline: none;
     border: 1px solid #ddd;
     border-radius: 4px;
+    resize: none;
     background-color: inherit;
 
     &:invalid,
@@ -122,31 +109,26 @@ export default {
     }
   }
 
+
+
   &__label-text {
     position: absolute;
     font-size: 14px;
-    top: 50%;
+    top: 26px;
     left: 12px;
-    padding: 2px 8px 2px 2px;
+    padding: 2px;
     background-color: inherit;
     transform: translateY(-50%);
     transition: all .3s;
-    & > sup {
-
-      position: absolute;
-      bottom: 5px;
-      right: 2px;
-      color: #ef4d4d;
-    }
   }
 
-  &__input:not(:placeholder-shown) + &__label-text,
-  &__input:focus + &__label-text {
+  &__textarea:not(:placeholder-shown) + &__label-text,
+  &__textarea:focus + &__label-text {
     top: 0;
     font-size: 12px;
   }
 
-  &__input:valid:not(:placeholder-shown):not(:focus) + &__label-text {
+  &__textarea:valid:not(:placeholder-shown):not(:focus) + &__label-text{
     color: #81bf81;
   }
 }

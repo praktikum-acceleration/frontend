@@ -1,16 +1,26 @@
 .form {
-  padding: 24px;
-  width: 400px;
-  background-color: #fff;
+  width: 100%;
+  background-color: inherit;
   border-radius: 12px;
 
   &__row {
-    height: 56px;
+    min-height: 56px;
     width: 100%;
 
     &:not(:last-child) {
       margin-bottom: 24px;
     }
+  }
+
+  &__checkbox {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  &__error {
+    margin-bottom: 12px;
+    color: #ef4d4d;
+    font-size: 12px;
   }
 
   &__disclaimer {
@@ -19,7 +29,7 @@
     background-color: transparent;
     width: 100%;
     margin-bottom: 12px;
-    color: #5DA2D5;
+    color: $blue-light;
 
     &:hover {
       opacity: .8;

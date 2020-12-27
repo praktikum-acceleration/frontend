@@ -1,29 +1,55 @@
-import { getProducts } from '@/assets/request/request'
-
 export const state = () => ({
-  offers: [],
-});
+  offers: {},
+  myOffers: {},
+  isLoaded: false,
+})
 
 export const mutations = {
-  setState(state, { name, value }) {
-    return (state[name] = value);
+  setOffers(state, { offers }) {
+    state.offers = offers
+    const myOffers = {}
+    Object.keys(offers).forEach(id => {
+      if (offers[id]?.editable === 'True') {
+        myOffers[id] = offers[id]
+      }
+    })
+    state.myOffers = myOffers
   },
-};
+  stopLoading(state) {
+    state.isLoaded = true
+  }
+}
 
 export const actions = {
-  async fetchOffers({ commit }) {
-
-    const blocks = await getProducts();
-    console.log(blocks)
-    commit('setState', {
-      name: 'offers',
-      value: blocks,
-    });
-  },
-};
+  fetchOffers({ commit }, token) {
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    console.log(token)
+    if (token) {
+      headers['authorization'] = `Bearer ${token}`
+    }
+    fetch(`${process.env.baseUrl}`, {
+      method: 'GET',
+      headers
+    }).then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else return Promise.reject(`Ошибка: ${res.status}`);
+      })
+      .then(offers => {
+        commit('setOffers', {
+            offers
+          })
+      })
+      .finally(res=>{
+      commit('stopLoading')
+    })
+  }
+}
 
 export const getters = {
   getOffers(state) {
-    return state.offers;
-  },
-};
+    return state.offers
+  }
+}
