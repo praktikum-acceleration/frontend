@@ -25,7 +25,6 @@ export const actions = {
     const headers = {
       'Content-Type': 'application/json'
     }
-    console.log(token)
     if (token) {
       headers['authorization'] = `Bearer ${token}`
     }

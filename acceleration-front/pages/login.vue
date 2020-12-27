@@ -1,6 +1,6 @@
 <template>
-  <div class="lk-root" @click="closeDropDown">
-    <div class="login">
+  <div class="login" @click="closeDropDown">
+
     <transition name="slide-fade">
       <form v-if="loginForm" enctype="multipart/form-data" class="login-form" @submit.prevent="login" :key="1"
             method="POST" action="auth/login/">
@@ -11,7 +11,7 @@
              name="email"
              type="email"
              :value.sync="email" />
-        <Inp class="form__row" label="Пароль" name="password" type="text" :value.sync="password" />
+        <Inp class="form__row" label="Пароль" name="password" type="password" :value.sync="password" />
         <button type="button" class="form__disclaimer" @click="loginForm=false">Зарегстрироваться
         </button>
         <Btn class="form__row _blue" type="submit">Войти</Btn>
@@ -37,7 +37,6 @@
         <Btn class="form__row _blue" type="submit">Зарегестироваться</Btn>
       </form>
     </transition>
-    </div>
   </div>
 </template>
 
@@ -103,7 +102,7 @@ export default {
       this.errorDropdown = false
       this.closeDropDown()
     },
-    async login() {
+    login: async function() {
 
       fetch(`${process.env.baseUrl}auth/login/`, {
         method: 'POST',
@@ -127,10 +126,12 @@ export default {
           this.$router.push('/')
           return res
         })
-        .catch(e => console.log(e.json()))
-        .finally(res => {
+        .catch(e => {
 
-        })
+          return e.json()
+        }).then(res => {
+        console.log(res)
+      })
 
     },
     singUp(e) {
@@ -154,7 +155,7 @@ export default {
           password: this.password
         }),
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         }
       }).then(res => {
           if (!res.ok) {
@@ -202,8 +203,10 @@ export default {
 <style lang="scss">
 
 .login {
-  padding-top: 0;
-  height: calc(100vh);
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .slide-fade-enter-active {
     transition: all .3s ease;
@@ -213,23 +216,17 @@ export default {
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
 
-  .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active до версии 2.1.8 */
-  {
-    transform: translateX(-30%) translateY(-50%);
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(-30%);
     opacity: 0;
   }
 }
 
 .login-form {
   width: 400px;
-  //padding: 20px;
   background-color: #fff;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: calc(50% - 200px);
+  //bottom: 300px;
 }
-
-
 </style>

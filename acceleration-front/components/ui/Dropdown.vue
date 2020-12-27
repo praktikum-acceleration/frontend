@@ -2,7 +2,7 @@
   <div class="dropdown" @click.stop="toggleList">
     <button type="button" class="dropdown__button">
       <p>
-        {{ selected || title }}
+        {{ title }}
       </p>
       <Arrow
         color="#5B5E77"

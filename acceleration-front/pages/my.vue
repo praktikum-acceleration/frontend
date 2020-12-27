@@ -3,6 +3,7 @@
     <Container>
       <h1>Мои отзывы</h1>
       <ReplyList :offers="myOffers" />
+
     </Container>
   </div>
 </template>
@@ -19,6 +20,12 @@ export default {
 
   data() {
     return {
+    }
+  },
+
+  beforeMount() {
+    if(!window.localStorage.getItem('token')) {
+      this.$router.push('login/?message=noUser')
     }
   },
 

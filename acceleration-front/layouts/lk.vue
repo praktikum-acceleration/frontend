@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div :class="['root']">
     <header class="lk-header">
       <Container class="lk-header__container">
         <nuxt-link class="lk-header__logo" to="/">Logo</nuxt-link>
@@ -75,7 +75,6 @@ export default {
 }
 
 .lk-header {
-  //background-color: ;
   border-bottom: 1px solid $blue-light;
   color: #151414;
 

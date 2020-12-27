@@ -35,7 +35,13 @@ export default {
       this.$store.dispatch('offers/fetchOffers',JSON.parse(window.localStorage.getItem('token')))
       this.$router.push('/')
     },
-  }
+  },
+
+  beforeMount() {
+    if(!window.localStorage.getItem('token')) {
+      this.$router.push('login/?message=noUser')
+    }
+  },
 }
 </script>
 <style lang="scss">

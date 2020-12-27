@@ -91,7 +91,7 @@ export default {
         body: JSON.stringify({
           id: formData.get('id'),
           review_date: formData.get('review_date'),
-          job_status: formData.get('job_status') ? '1': '',
+          job_status: formData.get('job_status') ? '1': 'False',
           reply: formData.get('reply'),
           replies_from_employer: formData.get('replies_from_employer'),
           test_tasks: formData.get('test_tasks'),
