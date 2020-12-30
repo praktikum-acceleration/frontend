@@ -29,7 +29,7 @@ export default {
 
         const offersObj = {}
 
-        Object.keys(this.offers).forEach(id => {
+        Object.keys(this.offers).reverse().forEach(id => {
           const offer = this.offers[id]
           Object.keys(offer).forEach(key => {
             offersObj[key] = offersObj[key] || []
@@ -76,14 +76,6 @@ export default {
               data: [...offersObj.offers],
               lineTension: 0
             },
-            {
-              label: 'Нашел работу',
-              borderColor: '#89c676',
-              backgroundColor: '#89c676',
-              fill: false,
-              data: [...offersObj.job_status.filter(status => status === 'True')],
-              lineTension: 0
-            }
           ]
         }
       }

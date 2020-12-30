@@ -1,7 +1,7 @@
 <template>
   <div class="reply-list">
       <Reply v-for="(id, index) in Object.keys(offers).reverse()"
-             :key="index"
+             :key="id"
              :reply="offers[id]"
              :id="id"
       />
