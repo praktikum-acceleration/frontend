@@ -26,7 +26,7 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchOffers({ commit }, token) {
+  fetchOffers(state, token) {
     const headers = {
       'Content-Type': 'application/json'
     }
@@ -42,12 +42,12 @@ export const actions = {
         } else return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then(offers => {
-        commit('setOffers', {
+        return state.commit('setOffers', {
             offers
           })
       })
-      .finally(res=>{
-      commit('stopLoading')
+      .finally(res =>{
+        state.commit('stopLoading')
     })
   },
 
@@ -67,7 +67,7 @@ export const actions = {
         } else return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then(offers => {
-        commit('setStats', {
+        return commit('setStats', {
           offers
         })
       })
