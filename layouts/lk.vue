@@ -3,10 +3,10 @@
     <header class="lk-header">
       <Container class="lk-header__container">
         <nuxt-link class="lk-header__logo" to="/">Logo</nuxt-link>
-        <nuxt-link class="lk-header__link" to="/">Лента</nuxt-link>
-        <nuxt-link class="lk-header__link" to="/stats">Статистика</nuxt-link>
+        <nuxt-link class="lk-header__link" to="/">Комментарии пользователей</nuxt-link>
         <template v-if="userLogin">
-          <nuxt-link class="lk-header__link" to="/reply">Добавить отзыв</nuxt-link>
+          <nuxt-link class="lk-header__link" to="/table">Дневник</nuxt-link>
+          <nuxt-link class="lk-header__link" to="/stats">Статистика</nuxt-link>
           <nuxt-link class="lk-header__link" to="/my">Мои отзывы</nuxt-link>
           <nuxt-link class="lk-header__link" to="/profile">Профиль</nuxt-link>
           <button class="lk-header__logout" @click="logout">Выйти</button>
@@ -19,14 +19,21 @@
     <transition name="slide-fade" appear>
       <Nuxt @updateUser="checkUser"/>
     </transition>
+    <Popup>
+      <ReplyForm v-if="replyFormPopup"/>
+    </Popup>
   </div>
 </template>
 
 <script>
 import Container from '@/components/layout/Container'
+import Popup from '~/components/layout/Popup';
+import ReplyForm from '~/components/ReplyForm';
 
 export default {
   components: {
+    ReplyForm,
+    Popup,
     Container
   },
 
@@ -42,6 +49,11 @@ export default {
       const { isLoaded } = this.$store.state.offers
       return isLoaded
     },
+
+    replyFormPopup() {
+      const { replyForm } = this.$store.state.popup
+      return replyForm
+    }
   },
 
   methods: {
@@ -56,10 +68,15 @@ export default {
   },
 
   beforeMount() {
-    this.$store.dispatch('offers/fetchOffers', JSON.parse(window.localStorage.getItem('token')))
     this.checkUser()
     this.$root.$on('updateUser',this.checkUser)
   },
+
+  mounted() {
+    this.$store.dispatch('popup/openReplyFormPopup',{
+      title:'Привет! Расскажи, как прошла твоя неделя 🙌'
+    })
+  }
 
 }
 

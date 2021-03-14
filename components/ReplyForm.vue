@@ -50,8 +50,17 @@
   </form>
 </template>
 <script>
+
+import Inp from '~/components/ui/Inp';
+import Btn from '~/components/ui/Btn';
+import TextAr from '~/components/ui/TextAr';
 export default {
   name: 'ReplyForm',
+  components: {
+    Inp,
+    Btn,
+    TextAr
+  },
   props: {
     reply: {
       type: Object,
@@ -108,7 +117,7 @@ export default {
         }
         return res.json()
       }).then(res => {
-        this.$store.dispatch('offers/fetchOffers',JSON.parse(window.localStorage.getItem('token')))
+        this.$store.dispatch('offers/fetchOffers')
         this.$emit('success')
       }).catch(res => {
         return res.json()

@@ -5,7 +5,7 @@ const rejectByChance = () => {
   return false
 }
 
-/** Emulate get request */
+/** Emulate get js */
 export const getProducts = () =>
   new Promise((resolve, reject) => {
     if (rejectByChance()) {
@@ -19,7 +19,7 @@ export const getProducts = () =>
     }, delay)
   })
 
-/** Emulate delete request */
+/** Emulate delete js */
 export const deleteProducts = () =>
   new Promise((resolve, reject) => {
     if (rejectByChance()) {

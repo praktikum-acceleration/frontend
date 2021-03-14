@@ -38,18 +38,13 @@ export default {
         })
 
         this.datacollection = {
-          labels: [...offersObj.review_date.map(date => {
-            const newDate = date.split('-')
-            return `${newDate[2]}.${newDate[1]}`
-          })
-          ],
           datasets: [
             {
               label: 'Отлики',
               borderColor: '#F78888',
               backgroundColor: '#F78888',
               fill: false,
-              data: [...offersObj.reply],
+              data: offersObj.replies,
               lineTension: 0
             },
             {
@@ -57,7 +52,7 @@ export default {
               borderColor: '#F3D250',
               backgroundColor: '#F3D250',
               fill: false,
-              data: [...offersObj.replies_from_employer],
+              data: offersObj.replies_from_employer,
               lineTension: 0
             },
             {
@@ -65,7 +60,7 @@ export default {
               borderColor: '#5DA2D5',
               backgroundColor: '#5DA2D5',
               fill: false,
-              data: [...offersObj.test_tasks],
+              data: offersObj.test_tasks,
               lineTension: 0
             },
             {
@@ -73,7 +68,7 @@ export default {
               borderColor: '#90CCF4',
               backgroundColor: '#90CCF4',
               fill: false,
-              data: [...offersObj.offers],
+              data: offersObj.offers,
               lineTension: 0
             },
           ]

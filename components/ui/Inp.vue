@@ -11,13 +11,16 @@
              :valueAsDate="valueAsDate"
              v-model="value"
              @change="changeInput"
-             @blur="validate">
+             @blur="validate($event)">
       <span class="input__label-text" v-html="label"></span>
     </label>
     <span class="input__error-message">{{ errorMessage }}</span>
   </div>
 </template>
 <script>
+import {getToday} from '~/assets/js/common';
+import {VALIDATION_CONFIG} from '~/assets/js/CONSTS';
+
 export default {
   data() {
     return {
@@ -50,7 +53,6 @@ export default {
       default: ''
     },
 
-
     errorMessage: {
       type: String
     }
@@ -59,23 +61,21 @@ export default {
   methods: {
     changeInput(e) {
       this.$emit('update:value', e.currentTarget.value)
+      // this.validate(e);
     },
     validate(e) {
       const input = e.currentTarget
       this.onError = input.checkValidity()
-      // if(input.valid)
+      this.errorMessage = input.validity ? '' : VALIDATION_CONFIG[input.type][input.validity] ?? ''
+      console.log(input.type,'input.validationMessage')
 
     },
-    getToday() {
-      const today = new Date()
-      return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-    }
   },
 
   created() {
     this.value = this.defaultValue
     if(this.type === 'date' && !this.defaultValue) {
-      this.value = this.getToday()
+      this.value = getToday()
     }
   },
 }
@@ -83,7 +83,7 @@ export default {
 <style lang="scss">
 .input {
   font-weight: 400;
-  height: 56px;
+  height: 48px;
   width: 100%;
   background-color: inherit;
 

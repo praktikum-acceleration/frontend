@@ -25,13 +25,13 @@ export default {
 
   beforeMount() {
     if(!window.localStorage.getItem('token')) {
-      this.$router.push('login/?message=noUser')
+
     }
   },
 
   methods: {
     editReplyHandler(reply) {
-      this.$store.dispatch('popup/openPopup', reply)
+      this.$store.dispatch('popup/openReplyFormPopup', {title:reply})
     }
   },
 

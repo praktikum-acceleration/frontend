@@ -1,7 +1,7 @@
-<<template>
+<template>
   <div class="lk-root">
     <Container>
-      <h1>Новости</h1>
+      <h1>Комментарии пользователей</h1>
       <ReplyList :offers="offers"/>
     </Container>
   </div>
@@ -22,7 +22,7 @@ export default {
       const { offers } = this.$store.state.offers
       return offers
     }
-  },
+  }
 }
 </script>
 <style lang="scss">

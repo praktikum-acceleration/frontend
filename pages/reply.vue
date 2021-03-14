@@ -19,6 +19,7 @@ import ReplyForm from '@/components/ReplyForm'
 import TextAr from '@/components/ui/TextAr'
 
 import 'assets/css/form.scss'
+import {validateRoute} from '~/assets/js/common';
 
 export default {
   layout: 'lk',
@@ -32,15 +33,13 @@ export default {
 
   methods: {
     updateReplies() {
-      this.$store.dispatch('offers/fetchOffers',JSON.parse(window.localStorage.getItem('token')))
+      this.$store.dispatch('offers/fetchOffers')
       this.$router.push('/')
     },
   },
 
   beforeMount() {
-    if(!window.localStorage.getItem('token')) {
-      this.$router.push('login/?message=noUser')
-    }
+    validateRoute.call(this)
   },
 }
 </script>

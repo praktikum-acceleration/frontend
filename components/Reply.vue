@@ -1,8 +1,8 @@
 <template>
 
-  <div :class="['reply', {'_success':reply.job_status == 'True'}]">
-      <template v-if="replyEditing">
-        <transition name="fade" appear>
+  <div :class="['reply', {'_success':reply.job_status === 'True'}]">
+    <template v-if="replyEditing">
+      <transition name="fade" appear>
         <ReplyForm
           :reply="reply"
           :key="1"
@@ -11,82 +11,83 @@
           title="Редактировать"
           method="PUT"
           @success="replyEditing = false">
-          <button @click="replyEditing = false" class="btn form__row _red">Отменить редактирование</button>
+          <button @click="replyEditing = false" class="btn form__row _red">Отменить редактирование
+          </button>
         </ReplyForm>
 
-        </transition>
-      </template>
+      </transition>
+    </template>
 
-      <template v-else>
-        <transition name="fade" appear>
-          <div class="reply__content">
-        <h3 class="reply__title">{{ reply.author }}</h3>
-        <p class="reply__date">{{ reply.programm }} {{ reply.wave }}</p>
-        <p class="reply__date">{{ getDate }}</p>
-        <ul class="reply__row">
-          <li class="reply__result">
-            <span class="reply__result-accent">Откликов: </span>{{ reply.reply }}
-          </li>
-          <li class="reply__result">
-            <span class="reply__result-accent">Тестовых: </span>{{ reply.test_tasks }}
-          </li>
-          <li class="reply__result">
-            <span class="reply__result-accent">Собеседований: </span>{{
-              reply.replies_from_employer
-            }}
-          </li>
-          <li class="reply__result">
-            <span class="reply__result-accent">Офферов: </span>{{ reply.offers }}
-          </li>
-          <li v-if="reply.comment" class="reply__result">
-            <span class="reply__result-accent">Комментарий: </span>
-            <p v-if="reply.comment" class="reply__comment">
-              {{ reply.comment }}
-            </p>
-          </li>
-        </ul>
-            <template v-if="reply.editable ==='True' ">
-        <button
-          class="reply__edit"
-          @click="editReply">
-        </button>
-        <button
-          class="reply__delete"
-          @click="deleteReply">
-        </button>
-            </template>
-          </div>
-        </transition>
-      </template>
+    <template v-else>
+      <transition name="fade" appear>
+        <div class="reply__content">
+          <h3 class="reply__title">{{ reply.author }}</h3>
+          <p class="reply__date">{{ reply.programm }} {{ reply.wave }}</p>
+          <p class="reply__date">{{ getDate }}</p>
+          <ul class="reply__row">
+            <li class="reply__result">
+              <span class="reply__result-accent">Откликов: </span>{{ reply.reply }}
+            </li>
+            <li class="reply__result">
+              <span class="reply__result-accent">Тестовых: </span>{{ reply.test_tasks }}
+            </li>
+            <li class="reply__result">
+              <span class="reply__result-accent">Собеседований: </span>{{
+                reply.replies_from_employer
+              }}
+            </li>
+            <li class="reply__result">
+              <span class="reply__result-accent">Офферов: </span>{{ reply.offers }}
+            </li>
+            <li v-if="reply.comment" class="reply__result">
+              <span class="reply__result-accent">Комментарий: </span>
+              <p v-if="reply.comment" class="reply__comment">
+                {{ reply.comment }}
+              </p>
+            </li>
+          </ul>
+          <template v-if="reply.editable ==='True' ">
+            <button
+              class="reply__edit"
+              @click="editReply">
+            </button>
+            <button
+              class="reply__delete"
+              @click="deleteReply">
+            </button>
+          </template>
+        </div>
+      </transition>
+    </template>
 
   </div>
 </template>
 <script>
-import ReplyForm from '@/components/ReplyForm'
+import ReplyForm from '@/components/ReplyForm';
 
 
 export default {
   name: 'Reply',
   components: {
-    ReplyForm
+    ReplyForm,
   },
 
   props: {
     reply: {
       type: Object,
       default() {
-        return {}
-      }
+        return {};
+      },
     },
     id: {
-      default: '1'
-    }
+      default: '1',
+    },
   },
 
   data() {
     return {
-      replyEditing: false
-    }
+      replyEditing: false,
+    };
   },
 
   computed: {
@@ -95,26 +96,25 @@ export default {
     }
   },
 
-  methods: {
-    editReply() {
-      this.replyEditing = true
-    },
+    methods: {
+      editReply() {
+        this.replyEditing = true;
+      },
 
-    deleteReply(e) {
-      // e.currentTarget.closest('.reply').remove()
-      fetch(`${process.env.baseUrl}add_review/`, {
-        method: 'DELETE',
-        body: JSON.stringify({
-          id: this.id
-        }),
-        headers: {
-          'authorization': `Bearer ${JSON.parse(window.localStorage.getItem('token'))}`,
-          'Content-Type': 'application/json'
-        }
-      })
-    }
+      deleteReply(e) {
+        fetch(`${process.env.baseUrl}add_review/`, {
+          method: 'DELETE',
+          body: JSON.stringify({
+            id: this.id,
+          }),
+          headers: {
+            'authorization': `Bearer ${JSON.parse(window.localStorage.getItem('token'))}`,
+            'Content-Type': 'application/json',
+          },
+        });
+      },
+    },
   }
-}
 </script>
 <style lang="scss">
 .reply {
@@ -190,3 +190,5 @@ export default {
   }
 }
 </style>
+
+

@@ -1,84 +1,74 @@
+import {get} from '~/assets/js/rest';
+
 export const state = () => ({
   offers: {},
   myOffers: {},
   stats: {},
   isLoaded: false,
-})
+});
 
 export const mutations = {
-  setOffers(state, { offers }) {
-    state.offers = offers
-    const myOffers = {}
+  setOffers(state, {offers}) {
+    state.offers = offers;
+    const myOffers = {};
     Object.keys(offers).forEach(id => {
       if (offers[id]?.editable === 'True') {
-        myOffers[id] = offers[id]
+        myOffers[id] = offers[id];
       }
-    })
-    state.myOffers = myOffers
+    });
+    state.myOffers = myOffers;
   },
-  setStats(state, { offers }) {
-    state.stats = offers
-    console.log(state.stats)
+  setStats(state, {offers}) {
+    state.stats = offers;
+    console.log(state.stats);
   },
   stopLoading(state) {
-    state.isLoaded = true
-  }
-}
+    state.isLoaded = true;
+  },
+};
 
 export const actions = {
-  fetchOffers(state, token) {
-    const headers = {
-      'Content-Type': 'application/json'
+  fetchOffers(state) {
+    if(window.localStorage.getItem('token')) {
+      return get('comments/').then(offers => {
+          return state.commit('setOffers', {
+            offers,
+          });
+        })
+        .finally(res => {
+          state.commit('stopLoading');
+        });
     }
-    if (token) {
-      headers['authorization'] = `Bearer ${token}`
-    }
-    fetch(`${process.env.baseUrl}`, {
-      method: 'GET',
-      headers
-    }).then((res) => {
-        if (res.ok) {
-          return res.json()
-        } else return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .then(offers => {
-        return state.commit('setOffers', {
-            offers
-          })
-      })
-      .finally(res =>{
-        state.commit('stopLoading')
-    })
   },
 
-  fetchStats({ commit }, token) {
+  fetchStats({commit}, token) {
     const headers = {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    };
     if (token) {
-      headers['authorization'] = `Bearer ${token}`
+      headers['authorization'] = `Bearer ${token}`;
     }
-    fetch(`${process.env.baseUrl}stats/`, {
+    return fetch(`${process.env.baseUrl}stats/`, {
       method: 'GET',
-      headers
+      headers,
     }).then((res) => {
         if (res.ok) {
-          return res.json()
+          return res.json();
         } else return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then(offers => {
         return commit('setStats', {
-          offers
-        })
+          offers,
+        });
       })
-      .finally(res=>{
-        commit('stopLoading')
-      })
-  }
-}
+      .finally(res => {
+        commit('stopLoading');
+      });
+  },
+};
 
 export const getters = {
   getOffers(state) {
-    return state.offers
-  }
-}
+    return state.offers;
+  },
+};

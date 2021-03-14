@@ -1,16 +1,23 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'acceleration-front',
+    htmlAttrs: {
+      lang: 'ru',
+    },
+    title: 'Программа акселерации',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
+      {lang: 'ru'}
     ],
+
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  ssr: false,
   env: {
     baseUrl: 'http://127.0.0.1:8000/',
   },
@@ -21,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

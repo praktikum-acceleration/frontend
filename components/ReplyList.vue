@@ -17,7 +17,7 @@ export default {
 
   methods: {
     editReplyHandler(reply) {
-      this.$store.dispatch('popup/openPopup', reply)
+      this.$store.dispatch('popup/openReplyFormPopup', {title:reply})
     }
   },
 

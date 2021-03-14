@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0bcaae0d-39f2-4cb6-aac8-8416e5f45406" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/CONSTS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/rest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/charts/FunnelChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/table/TableCell.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/table/TableDate.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/table/TableLink.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/table/TableRow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/table/TableTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/profile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/table.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/request/offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/offers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/request/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ReplyForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ReplyForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ReplyList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ReplyList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/charts/UserLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/charts/UserLine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/Popup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/Popup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Btn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Btn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Dropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Dropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Inp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Inp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/lk.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/lk.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/my.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile/:id.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/stats.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stats.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/offers.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/offers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/popup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,10 +69,40 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/table" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/table" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -35,10 +114,64 @@
       <updated>1606071189201</updated>
       <workItem from="1606071190252" duration="639000" />
       <workItem from="1606234640726" duration="49000" />
+      <workItem from="1610891446560" duration="4675000" />
+      <workItem from="1611144890699" duration="460000" />
+      <workItem from="1611492339610" duration="8530000" />
+      <workItem from="1612042957199" duration="15283000" />
+      <workItem from="1613214076362" duration="429000" />
+      <workItem from="1613217956932" duration="12202000" />
+      <workItem from="1613834644824" duration="15611000" />
+      <workItem from="1614165431405" duration="1741000" />
+      <workItem from="1615285042804" duration="3804000" />
+      <workItem from="1615302456953" duration="3293000" />
+      <workItem from="1615402851332" duration="11467000" />
+      <workItem from="1615669208969" duration="10010000" />
+      <workItem from="1615688084638" duration="1381000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="223" key="GridCell.Tab.0.bottom" timestamp="1615689302740">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="223" key="GridCell.Tab.0.bottom/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689302740" />
+    <state width="1419" height="223" key="GridCell.Tab.0.center" timestamp="1615689302740">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="223" key="GridCell.Tab.0.center/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689302740" />
+    <state width="1419" height="223" key="GridCell.Tab.0.left" timestamp="1615689302740">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="223" key="GridCell.Tab.0.left/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689302740" />
+    <state width="1419" height="223" key="GridCell.Tab.0.right" timestamp="1615689302740">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="223" key="GridCell.Tab.0.right/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689302740" />
+    <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615676797713">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615676797713" />
+    <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612105937821" />
+    <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1615287910500" />
+    <state x="418" y="223" width="643" height="554" key="find.popup" timestamp="1615689644234">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="418" y="205" width="604" height="490" key="find.popup/0.0.1440.900/1440.-148.1920.1080@0.0.1440.900" timestamp="1611500139385" />
+    <state x="418" y="223" width="643" height="554" key="find.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689644234" />
+    <state x="418" y="223" width="604" height="490" key="find.popup/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612053387444" />
+    <state x="418" y="223" width="643" height="554" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1615310866872" />
+    <state x="369" y="184" width="700" height="530" key="recent.locations.popup" timestamp="1615285436805">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="369" y="184" width="700" height="530" key="recent.locations.popup/0.23.1440.877@0.23.1440.877" timestamp="1615285436805" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1615688917039">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615688917039" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612108868743" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1615311212774" />
   </component>
 </project>

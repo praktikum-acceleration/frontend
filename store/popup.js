@@ -1,17 +1,16 @@
 export const state = () => ({
   visible: false,
-  isShare: false,
-  isQuiz: false,
-  isForm: false,
-  isHaveClose: true,
-  isError: false,
-  isLoading: false,
+  replyForm: false,
+  title: '',
+  subtitle: '',
 });
 
 export const mutations = {
-   openPopup(state, reply) {
+   openPopup(state, {title,subtitle,replyForm}) {
     state.visible = true;
-    state.reply = reply
+    state.title = title;
+    state.subtitle = subtitle;
+    state.replyForm = replyForm;
   },
   closePopup(state) {
     state.visible = false;
@@ -19,7 +18,14 @@ export const mutations = {
 };
 
 export const actions = {
-   openPopup({ commit, state }, reply) {
-     commit('openPopup', state, reply);
+   openReplyFormPopup({ commit, state }, {title}) {
+     commit('openPopup', {title,replyForm: true});
+  },
+  openTextPopup({ commit, state }, {title,subtitle}) {
+    commit('openPopup', {title,subtitle,replyForm: false});
+  },
+
+  closePopup({ commit, state }) {
+    commit('closePopup');
   },
 }

@@ -71,7 +71,7 @@ export default {
   }
 
   &__button {
-    height: 56px;
+    height: 48px;
     width: 100%;
     display: flex;
     align-items: center;

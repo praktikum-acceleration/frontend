@@ -2,7 +2,7 @@
   <div class="login" @click="closeDropDown">
 
     <transition name="slide-fade">
-      <form v-if="loginForm" enctype="multipart/form-data" class="login-form" @submit.prevent="login" :key="1"
+      <form v-if="loginForm" novalidate="true" enctype="multipart/form-data" class="login-form" @submit.prevent="login" :key="1"
             method="POST" action="auth/login/">
 
         <p v-if="showError" class="form__error">{{ errorText }}</p>
@@ -24,6 +24,7 @@
         <Dropdown :class="['form__row',{_error: errorDropdown},{_success: selected}] " :title="selected ||'Факультет'">
           <Radio v-for="programm in programms"
                  :value="programm.programm_name"
+                 :key="programm.programm_name"
                  name="programm"
                  @radio-change="setSelected">{{ programm.programm_name }}
           </Radio>
@@ -91,6 +92,10 @@ export default {
     }
 
   },
+
+mounted() {
+  console.log(this.$router,this.$route,'this.$router,this.$router')
+},
   methods: {
     closeDropDown() {
       this.$store.dispatch('dropDown/closeDropDown')
@@ -121,7 +126,7 @@ export default {
         })
         .then(res => {
           window.localStorage.setItem('token', JSON.stringify(res.token))
-          this.$store.dispatch('offers/fetchOffers', res.token)
+          this.$store.dispatch('offers/fetchOffers')
           this.$root.$emit('updateUser')
           this.$router.push('/')
           return res

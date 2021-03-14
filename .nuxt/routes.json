@@ -1,0 +1,51 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_062571e3"
+  },
+  {
+    "name": "my",
+    "path": "/my",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/my.vue",
+    "chunkName": "pages/my",
+    "_name": "_1848edbc"
+  },
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_0dbd5ba3"
+  },
+  {
+    "name": "reply",
+    "path": "/reply",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/reply.vue",
+    "chunkName": "pages/reply",
+    "_name": "_52c5ece4"
+  },
+  {
+    "name": "stats",
+    "path": "/stats",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/stats.vue",
+    "chunkName": "pages/stats",
+    "_name": "_1dde87ce"
+  },
+  {
+    "name": "table",
+    "path": "/table",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/table.vue",
+    "chunkName": "pages/table",
+    "_name": "_13cdf870"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/sidorovn/Documents/dev/frontend/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3c7dcecc"
+  }
+]

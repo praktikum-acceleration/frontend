@@ -3,55 +3,93 @@
     <Container>
       <h1 class="title">Статистика программы трудоустройства</h1>
     <div class="graphs__graphs">
-      <UserLine v-if="Object.keys(offers).length" :offers="offers"/>
+      <client-only>
+        <FunnelChart
+                     :data="data"
+                     :labels="labels"
+                     :backgroundColor="backgroundColor"
+                     :hoverBackgroundColor="hoverBackgroundColor"
+                     :sdata="sdata"
+        />
+      </client-only>
     </div>
     </Container>
   </div>
 </template>
 <script>
 import Container from '@/components/layout/Container'
-import UserLine from '@/components/charts/UserLine'
+// import UserLine from '@/components/charts/UserLine'
+import {validateRoute} from '~/assets/js/common';
+
+
 
 export default {
   layout: 'lk',
   components: {
-    UserLine,
-    Container
+    // UserLine,
+    Container,
+    FunnelChart: ()=> process.client && import('@/components/charts/FunnelChart'),
   },
 
   data() {
     return {
-      offers: {}
+      data: [30, 60, 90, 90, 90],
+      backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56',
+        '#FFCE56',
+        '#FFCE56',
+      ],
+      hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56',
+        '#FFCE56',
+        '#FFCE56',
+        '#FFCE56',
+      ],
+      labels: [
+        'Первый контакт',
+        'Собеседование с HR',
+        'Техническое собеседование',
+        'Финальное собеседование',
+        'Оффер'
+      ],
+      sdata: {
+        datasets: [{
+          data: [30, 60, 90, 90, 90],
+          backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#FFCE56',
+            '#FFCE56',
+          ],
+          hoverBackgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#FFCE56',
+            '#FFCE56',
+            '#FFCE56',
+          ],
+        }],
+        labels: [
+          'Первый контакт',
+          'Собеседование с HR',
+          'Техническое собеседование',
+          'Финальное собеседование',
+          'Оффер'
+        ],
+      },
     }
   },
 
   beforeMount() {
-    this.$store.dispatch('offers/fetchStats', JSON.parse(window.localStorage.getItem('token')))
+    this.loaded = true
+    validateRoute.call(this)
   },
-
-  computed: {
-    stats() {
-      return this.$store.state.offers.stats
-    }
-  },
-
-  methods: {
-    getReviewDate(today) {
-      return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-    }
-  },
-  watch: {
-    stats() {
-      this.offers = {...this.stats}
-      Object.keys(this.offers).forEach(id=> {
-        const startDate = new Date(2020,0 ,-2)
-        const offer = this.offers[id]
-        startDate.setDate(startDate.getDate() + 7 * offer.week)
-        console.log(startDate)
-        offer.review_date = this.getReviewDate(startDate)
-      })
-    }
-  }
 }
 </script>
 <style>
