@@ -28,10 +28,10 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-
+    // {src:'~/plugins/highchart.js',ssr:false},
   ],
 
-  // Auto import components (https://go.nuxtjs.dev/config-components)
+    // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)

@@ -41,21 +41,8 @@ export const actions = {
     }
   },
 
-  fetchStats({commit}, token) {
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    if (token) {
-      headers['authorization'] = `Bearer ${token}`;
-    }
-    return fetch(`${process.env.baseUrl}stats/`, {
-      method: 'GET',
-      headers,
-    }).then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else return Promise.reject(`Ошибка: ${res.status}`);
-      })
+  fetchStats({commit}) {
+    return get('stats/',)
       .then(offers => {
         return commit('setStats', {
           offers,

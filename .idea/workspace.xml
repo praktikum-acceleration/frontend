@@ -5,45 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bcaae0d-39f2-4cb6-aac8-8416e5f45406" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/CONSTS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/rest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/charts/FunnelChart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/table/TableCell.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/table/TableDate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/table/TableLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/table/TableRow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/table/TableTable.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/profile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/table.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/help.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/highchart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/request/offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/offers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/request/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Reply.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ReplyForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ReplyForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ReplyList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ReplyList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/charts/UserLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/charts/UserLine.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout/Popup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/Popup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/Btn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Btn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/Dropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Dropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/Inp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Inp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/lk.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/lk.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-build-indicator.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-child.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-error.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-link.client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-link.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt-loading.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/nuxt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/empty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/jsonp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/loading.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/mixins/fetch.client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/mixins/fetch.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/pwa/icon.plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/pwa/meta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/pwa/meta.plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/pwa/meta.utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/router.scrollBehavior.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/vetur/tags.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/views/app.template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/views/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/workbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/charts/FunnelChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/charts/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/charts/LineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/my.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/my.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/:id.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/stats.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stats.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/assets/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/components/Logo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/components/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/layouts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/layouts/default.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/middleware/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/nuxt.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pages/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pages/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/plugins/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/store/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/offers.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/offers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/popup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +110,15 @@
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/components/table" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pages" />
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/store" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/table" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,7 +160,7 @@
       <workItem from="1615302456953" duration="3293000" />
       <workItem from="1615402851332" duration="11467000" />
       <workItem from="1615669208969" duration="10010000" />
-      <workItem from="1615688084638" duration="1381000" />
+      <workItem from="1615688084638" duration="11499000" />
     </task>
     <servers />
   </component>
@@ -134,6 +168,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1615725394620">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615725394620" />
     <state width="1419" height="223" key="GridCell.Tab.0.bottom" timestamp="1615689302740">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -150,27 +188,31 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1419" height="223" key="GridCell.Tab.0.right/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689302740" />
+    <state x="458" y="166" key="VCS.ChangeListViewerDialog" timestamp="1615725388424">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="458" y="166" key="VCS.ChangeListViewerDialog/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615725388424" />
     <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1615676797713">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615676797713" />
     <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612105937821" />
     <state x="339" y="79" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1615287910500" />
-    <state x="418" y="223" width="643" height="554" key="find.popup" timestamp="1615689644234">
+    <state x="418" y="223" width="643" height="554" key="find.popup" timestamp="1615727459395">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="418" y="205" width="604" height="490" key="find.popup/0.0.1440.900/1440.-148.1920.1080@0.0.1440.900" timestamp="1611500139385" />
-    <state x="418" y="223" width="643" height="554" key="find.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615689644234" />
+    <state x="418" y="223" width="643" height="554" key="find.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615727459395" />
     <state x="418" y="223" width="604" height="490" key="find.popup/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612053387444" />
     <state x="418" y="223" width="643" height="554" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1615310866872" />
     <state x="369" y="184" width="700" height="530" key="recent.locations.popup" timestamp="1615285436805">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="369" y="184" width="700" height="530" key="recent.locations.popup/0.23.1440.877@0.23.1440.877" timestamp="1615285436805" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1615688917039">
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1615725401684">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615688917039" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/0.-1057.1920.1057@0.23.1440.877" timestamp="1615725401684" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.-125.1920.1057@0.23.1440.877" timestamp="1612108868743" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1615311212774" />
   </component>

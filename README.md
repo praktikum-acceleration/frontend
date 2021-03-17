@@ -1,4 +1,4 @@
-# acceleration-front
+# app
 
 ## Build Setup
 
@@ -18,6 +18,3 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-
-#F78888 – #F3D250 – #ECECEC – #90CCF4 – #5DA2D5
